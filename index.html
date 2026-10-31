@@ -428,7 +428,7 @@ document.getElementById('calcBtn').addEventListener('click',()=>{
   const v=document.getElementById('bd').value;
   if(!v){document.getElementById('bd').focus();return;}
   let d=parseInt(v.split('-')[2],10);
-  if(d>22)d-=22;
+  if(d>22)d=Math.floor(d/10)+d%10;
   document.getElementById('rNum').textContent=d;
   document.getElementById('rName').textContent=arcana[d][0];
   document.getElementById('rDesc').textContent=arcana[d][1];
